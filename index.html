@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="p-4">
+  <form>
+    <div class="mb-3">
+      <label for="productName" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="productName" oninput="validateProductInput(this)">
+      <div class="alert alert-danger" role="alert">Must start with a capital letter</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="productPrice" class="form-label">Product Price</label>
+      <input type="text" class="form-control" id="productPrice" oninput="validateProductInput(this)">
+      <div class="alert alert-danger" role="alert">It must be a number</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="productCateogry" class="form-label">Product Category</label>
+      <input type="text" class="form-control" id="productCateogry" oninput="validateProductInput(this)">
+      <div class="alert alert-danger" role="alert">It must be a mobile or tv or laptop</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="productDescription" class="form-label">Product Description</label>
+      <input type="text" class="form-control" id="productDescription" oninput="validateProductInput(this)">
+      <div class="alert alert-danger" role="alert">You must write sentences</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="productImage" class="form-label">Product Image</label>
+      <input type="file" class="form-control" id="productImage" oninput="validateProductInput(this)">
+      <div class="alert alert-danger" role="alert">It must be a photo</div>
+    </div>
+
+    <button type="button" id="addBtn" onclick="addproduct()" class="btn btn-danger" disabled>Add</button>
+    <button type="button" id="updateBtn" onclick="updateproduct()" class="btn btn-warning d-none">Update</button>
+  </form>
+
+  <table class="table table-bordered mt-4">
+    <thead>
+      <tr>
+        <th>index</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="myBody"></tbody>
+  </table>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
